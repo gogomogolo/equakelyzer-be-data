@@ -9,15 +9,6 @@ import java.util.List;
 
 @Repository
 public interface EarthQuakeHistoricalRepository extends MongoRepository<EarthQuakeHistorical, String> {
-    List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCity(String city);
-    List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCityAndDistrict(String city, String district);
-    List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCityAndDistrictAndTown(String city, String district, String town);
-
-
     List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCityAndEarthQuakeLocalDateTimeBetween(String city, LocalDateTime from, LocalDateTime to);
-    List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCityAndDistrictAndEarthQuakeLocalDateTimeBetween(String city, String district, LocalDateTime from, LocalDateTime to);
-    List<EarthQuakeHistorical> findEarthQuakeHistoricalsByCityAndDistrictAndTownAndEarthQuakeLocalDateTimeBetween(String city, String district, String town, LocalDateTime from, LocalDateTime to);
-
     EarthQuakeHistorical findFirstByOrderByEarthQuakeLocalDateTimeDesc();
-
 }
